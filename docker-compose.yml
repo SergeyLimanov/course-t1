@@ -4,6 +4,10 @@ services:
     image: "tomcat:10.0"
     ports:
       - "8080:8080"
+#      - "5005:5005"
     volumes:
       - ./target/help-service.war:/usr/local/tomcat/webapps/help-service.war
     restart: on-failure
+#    catalina.sh run
+#    environment:
+#      JAVA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
