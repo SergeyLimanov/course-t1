@@ -1,4 +1,4 @@
-package com.limanov.t1.annotation;
+package main.brocker;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,5 +7,5 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface RestController {
+public @interface Subscription {
 }

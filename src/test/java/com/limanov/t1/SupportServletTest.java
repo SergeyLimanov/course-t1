@@ -2,7 +2,6 @@ package com.limanov.t1;
 
 import com.limanov.t1.model.MessageDto;
 import com.limanov.t1.service.SupportServiceImpl;
-import com.limanov.t1.servlet.SupportServletImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
