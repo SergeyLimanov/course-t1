@@ -1,15 +1,20 @@
-package com.limanov.t1.controller;
+package main.java.com.limanov.t1.controller;
 
-import com.limanov.t1.model.MessageDto;
-import com.limanov.t1.service.SupportService;
-import lombok.RequiredArgsConstructor;
+import main.brocker.Publisher;
+import main.java.com.limanov.t1.model.MessageDto;
+import main.java.com.limanov.t1.service.SupportService;
 import org.springframework.web.bind.annotation.*;
 
-@RequiredArgsConstructor
 @RequestMapping("/help-service/v1")
 @RestController
 public class SupportController {
     private final SupportService supportService;
+    private final Publisher<MessageDto> publisher;
+
+    public SupportController(SupportService supportService, Publisher<MessageDto> publisher) {
+        this.supportService = supportService;
+        this.publisher = publisher;
+    }
 
     @GetMapping("/support")
     public MessageDto getMainMessage() {
@@ -17,8 +22,8 @@ public class SupportController {
     }
 
     @PostMapping("/support")
-    public String createOrUpdateDog(@RequestBody String messageDto) {
-        supportService.addNewMessage(new MessageDto(messageDto));
-        return String.format("You have been added new message: %s", messageDto);
+    public String createOrUpdateDog(@RequestBody MessageDto messageDto) {
+        publisher.publish(messageDto);
+        return String.format("You have been added new message: %s", messageDto.getContentMessage());
     }
 }

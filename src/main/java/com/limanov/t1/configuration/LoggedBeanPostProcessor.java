@@ -1,6 +1,6 @@
-package com.limanov.t1.configuration;
+package main.java.com.limanov.t1.configuration;
 
-import com.limanov.t1.annotation.Logged;
+import main.java.com.limanov.t1.annotation.Logged;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;

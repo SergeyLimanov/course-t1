@@ -1,4 +1,4 @@
-package com.limanov.t1.model;
+package main.java.com.limanov.t1.model;
 
 public class MessageDto {
     private String contentMessage;

@@ -17,7 +17,4 @@ public class Publisher <T> {
             throw new RuntimeException(e);
         }
     }
-
-
-
 }

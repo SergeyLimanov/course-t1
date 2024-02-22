@@ -1,14 +1,24 @@
 package main.java.com.limanov.t1.service;
 
-import lombok.extern.slf4j.Slf4j;
+import main.brocker.Subscription;
+import main.java.com.limanov.t1.model.MessageDto;
+import org.junit.platform.commons.logging.LoggerFactory;
 import org.springframework.stereotype.Component;
-import com.limanov.t1.model.MessageDto;
 
-@Slf4j
+import java.util.logging.Logger;
+
+
 @Component
 public class SupportMessageSubscriber {
+    private final SupportService supportService;
 
+    public SupportMessageSubscriber(SupportService supportService) {
+        this.supportService = supportService;
+    }
+
+    @Subscription
     public void subscriber(MessageDto messageDto) {
-        log.info("Input message: {}", messageDto.getContentMessage());
+        supportService.addNewMessage(messageDto);
+        System.out.printf("Input message: %s%n", messageDto.getContentMessage());
     }
 }
