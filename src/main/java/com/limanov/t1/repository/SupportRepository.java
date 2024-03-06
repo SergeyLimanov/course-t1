@@ -1,6 +1,7 @@
-package com.limanov.t1.repository;
+package main.java.com.limanov.t1.repository;
 
-import com.limanov.t1.model.MessageDto;
+
+import main.java.com.limanov.t1.model.MessageDto;
 
 import java.util.List;
 

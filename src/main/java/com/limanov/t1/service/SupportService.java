@@ -1,7 +1,7 @@
-package com.limanov.t1.service;
+package main.java.com.limanov.t1.service;
 
-import com.limanov.t1.annotation.Logged;
-import com.limanov.t1.model.MessageDto;
+import main.java.com.limanov.t1.annotation.Logged;
+import main.java.com.limanov.t1.model.MessageDto;
 
 public interface SupportService {
 

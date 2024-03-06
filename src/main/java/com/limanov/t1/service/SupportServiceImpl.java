@@ -1,16 +1,18 @@
-package com.limanov.t1.service;
+package main.java.com.limanov.t1.service;
 
-import com.limanov.t1.annotation.Inject;
-import com.limanov.t1.repository.SupportRepositoryImpl;
-import com.limanov.t1.model.MessageDto;
+import lombok.RequiredArgsConstructor;
+import main.java.com.limanov.t1.annotation.Logged;
+import main.java.com.limanov.t1.model.MessageDto;
+import main.java.com.limanov.t1.repository.SupportRepositoryImpl;
+import org.springframework.stereotype.Service;
 
 import java.util.Random;
+@Service
+@Logged
+public class SupportServiceImpl implements SupportService {
+    private final SupportRepositoryImpl container;
 
-public class SupportServiceImpl implements SupportService{
-    private SupportRepositoryImpl container;
-
-    @Inject
-    public void setContainer(SupportRepositoryImpl container) {
+    public SupportServiceImpl(SupportRepositoryImpl container) {
         this.container = container;
     }
 

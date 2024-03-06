@@ -1,11 +1,13 @@
-package com.limanov.t1.repository;
+package main.java.com.limanov.t1.repository;
 
-import com.limanov.t1.model.MessageDto;
+import main.java.com.limanov.t1.model.MessageDto;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SupportRepositoryImpl implements SupportRepository{
+@Repository
+public class SupportRepositoryImpl implements SupportRepository {
    private static final List<MessageDto> helpList = new ArrayList<>();
 
    static {
